@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'snsk3779@',
-    database: 'user'
+    database: 'changwonnightdiagram'
   });
 connection.connect();
 
@@ -25,8 +25,10 @@ app.post('/log',function(req,res){
     console.log(req.body);
     var id = req.body.id;
     var pw = req.body.pw;
+    var salt = "salt";
+    var nickname = req.body.nickname;
     var email = req.body.email;
-    connection.query('INSERT INTO signin (id, pw, email) VALUES(?, ?, ?)',[id,pw,email],function(err,rows,fields){
+    connection.query('INSERT INTO usertable (user_id,user_salt,user_pw,user_email,nickname) VALUES(? ,? ,?, ?, ?)',[id,salt,pw,email,nickname],function(err,rows,fields){
         console.log('완료');
         
     })
@@ -36,15 +38,20 @@ app.post('/log',function(req,res){
 app.post('/admin',function(req,res){
     var id = req.body.id;
     var pw = req.body.pw;
-    connection.query('select pw from signin where id=?',[id],function(err,rows,fields){
+    connection.query('select user_pw,nickname from usertable where user_id=?',[id],function(err,rows,fields){
        
         var admin = new Object();
         admin.boolean = false;
         if(rows[0]===undefined){ //쿼리문항목안나오면
             res.send(admin);
             
-        }else if(rows[0].pw===pw){ //일치할떄
+        }else if(rows[0].user_pw===pw){ //일치할떄
             admin.boolean = true;
+            console.log(rows[0].nickname);
+            
+            admin.nickname = rows[0].nickname;
+            console.log(admin.nickname);
+            
             res.send(admin);
             
         }else{                        //쿼리 비번이랑 받아온 비번이랑 안맞을떄
@@ -59,7 +66,13 @@ app.post('/admin',function(req,res){
 
 app.post('/user',function(req,res){
     var ids = req.body.id;
-    connection.query('select id from signin where id=?',[ids],function(err,rows,fields){
+    connection.query('select user_id from usertable where user_id=?',[ids],function(err,rows,fields){
+             res.json(rows);
+    })
+})
+app.post('/nickname',function(req,res){
+    var nickname = req.body.nickname;
+    connection.query('select nickname from usertable where user_id=?',[nickname],function(err,rows,fields){
              res.json(rows);
     })
 })

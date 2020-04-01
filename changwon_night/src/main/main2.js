@@ -14,6 +14,7 @@ class Adminbox extends Component{
     logout(e){
         window.localStorage.setItem('id','');
         window.localStorage.setItem('admin',false);
+        window.localStorage.setItem('nickname','');
         
        
     }
@@ -25,7 +26,7 @@ class Adminbox extends Component{
             
             <div className="logbox">
                 <div className="idpwbox">
-                    <p>{window.localStorage.getItem('id')} 을 환영합니다!</p>
+                    <p>{window.localStorage.getItem('nickname')} 을 환영합니다!</p>
                     <ul id="sign">
                         <li>
                            <Link to='/admin'>개인정보</Link>

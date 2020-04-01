@@ -19,7 +19,7 @@
     border: 1px solid green;
     width: 400px;
     height: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     
 }
 .idinput input{
@@ -33,9 +33,27 @@
 .idinput button{
     margin-left: 40px;
 }
+.nickinput{
+    border: 1px solid green;
+    width: 400px;
+    height: 30px;
+    margin-top: 0px;
+    
+}
+.nickinput input{
+    margin-left: 10px;
+    height: 20px;
+    width: 160px;
+}
+.nickinput label{
+    font-size: 15px;
+}
+.nickinput button{
+    margin-left: 40px;
+}
 .pwinput{
     border: 1px solid blue;
-    margin-top: 20px;
+    margin-top: 0px;
     width: 400px;
     height: 30px;
 }
@@ -97,7 +115,7 @@
 }
 #pwdiv{
     border: 1px solid black;
-    width: 410px;
+    width: 400px;
     height: 30px;
     margin-top: 3px;
 }

@@ -8,6 +8,7 @@ class Longin extends React.Component{
         super(props);
         this.state={
             id:'',//아이디
+            nickname:'',
             pw:'',//비밀번호
             pw2:'',//비밀번호확인
             email:'',//이메일
@@ -16,12 +17,14 @@ class Longin extends React.Component{
             idcheck:'',//아이디 체크
             pwdiv:"8자리 이상 특수문자 영문자 숫자로 구성",
             pwcheck:'',
+            nicknamecheck:'',
             check:false,
             pwinput:true
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.checkid = this.checkid.bind(this);
+        this.checknickname = this.checknickname.bind(this);
         this.checkpw = this.checkpw.bind(this);
         this.checkemail = this.checkemail.bind(this);
         this.checkemail2 = this.checkemail2.bind(this);
@@ -39,6 +42,7 @@ class Longin extends React.Component{
         const post = {
             id:this.state.idcheck,
             pw:this.state.pwcheck,
+            nickname:this.state.nicknamecheck,
             email:this.state.email
         }
         if(this.state.idcheck==='')
@@ -56,9 +60,7 @@ class Longin extends React.Component{
                 headers : {
                     'content-type':'application/json'
                 },
-                body:JSON.stringify(post),
-                pw:JSON.stringify(post),
-                email:JSON.stringify(post)
+                body:JSON.stringify(post)
             })
             .then(alert("회원가입 완료"))
             .then(this.props.history.push("/"));
@@ -106,6 +108,32 @@ class Longin extends React.Component{
         
 
     };
+    checknickname(e){  //아이디 중복검사
+        e.preventDefault();
+        
+            const post = {
+                nickname:this.state.nickname
+            }
+           
+                fetch('http://localhost:3001/user',{
+                method:"post",
+                headers : {
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(post)
+            })
+            .then(res => res.json())
+            .then(json => {
+              if (json[0] === undefined) {
+                alert("사용가능 한 별명입니다");
+                this.setState({
+                  nicknamecheck: this.state.nickname
+                })}
+               else {
+                alert("이미 존재하는 별명입니다");
+              }
+            });
+        }
     checkpw(e){
         e.preventDefault();
         var pattern1 = /[0-9]/;	 //숫자
@@ -185,7 +213,7 @@ class Longin extends React.Component{
         
     }
     render(){
-        const {id,pw,pw2,email,number} = this.state;
+        const {id,nickname,pw,pw2,email,number} = this.state;
         const {onChange,onSubmit} = this;
         return(
             <div className="form">
@@ -197,6 +225,11 @@ class Longin extends React.Component{
                         <label>아이디:</label>
                         <input type="text" name="id" value={id} onChange={onChange}/>
                         <button onClick={this.checkid}>중복체크</button>
+                    </div>
+                    <div className="nickinput">
+                        <label>별명:</label>
+                        <input type="text" name="nickname" value={nickname} onChange={onChange}/>
+                        <button onClick={this.checknickname}>중복체크</button>
                     </div>
                     <div className="pwinput">
                         <label>비밀번호:</label>

@@ -11,6 +11,7 @@ class Login extends React.Component{
         this.state={
             id:'',//아이디
             pw:'',//비밀번호
+            nickname:'',
             admin:false
         };
         this.onChange = this.onChange.bind(this);
@@ -47,9 +48,11 @@ class Login extends React.Component{
                 alert('아이디비번다시확인!');
             }else{
                 this.setState({
-                    admin:true
+                    admin:true,
+                    nickname:json.nickname
                 })
                 window.localStorage.setItem('id',this.state.id)
+                window.localStorage.setItem('nickname',this.state.nickname)
                 window.localStorage.setItem('admin',this.state.admin)
                 this.props.history.push("/admin")
                 
