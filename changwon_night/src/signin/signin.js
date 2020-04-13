@@ -95,7 +95,7 @@ class Longin extends React.Component{
               if (json[0] === undefined) {
                 alert("사용가능 한 아이디입니다");
                 this.setState({
-                  idcheck: this.state.id
+                  idcheck: this.state.id 
                 })}
                else {
                 alert("이미 존재하는 아이디입니다");
@@ -108,14 +108,14 @@ class Longin extends React.Component{
         
 
     };
-    checknickname(e){  //아이디 중복검사
+    checknickname(e){  //닉네임 중복검사
         e.preventDefault();
         
             const post = {
                 nickname:this.state.nickname
             }
            
-                fetch('http://localhost:3001/user',{
+                fetch('http://localhost:3001/nickname',{
                 method:"post",
                 headers : {
                     'content-type':'application/json'
@@ -197,7 +197,7 @@ class Longin extends React.Component{
         }
         
     }
-    checkemail2(e){
+    checkemail2(e){ //인증번호 확인
         e.preventDefault();
         if((this.state.number)*1===this.state.emailsearch)
         {
@@ -212,7 +212,7 @@ class Longin extends React.Component{
         }
         
     }
-    render(){
+    render(){//회원가입
         const {id,nickname,pw,pw2,email,number} = this.state;
         const {onChange,onSubmit} = this;
         return(

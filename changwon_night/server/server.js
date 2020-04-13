@@ -10,10 +10,10 @@ const nodemailer = require('nodemailer');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'snsk3779@',
+    password: 'dydals0905',
     database: 'changwonnightdiagram'
   });
-connection.connect();
+connection.connect(); //mysql 연결
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
@@ -72,7 +72,7 @@ app.post('/user',function(req,res){
 })
 app.post('/nickname',function(req,res){
     var nickname = req.body.nickname;
-    connection.query('select nickname from usertable where user_id=?',[nickname],function(err,rows,fields){
+    connection.query('select nickname from usertable where nickname=?',[nickname],function(err,rows,fields){
              res.json(rows);
     })
 })
