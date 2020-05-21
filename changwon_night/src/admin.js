@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Adminbox from './main/main2';
 import Search from './search/search';
 import Top from './top5/top5';
+import Notice from './Board/notice';
+import Community from './Board/community';
+import Employment from './Board/employment';
+import Campus from './Board/campus';
+import Life from './Board/life';
 
 
 class Admin extends Component {
@@ -21,6 +26,11 @@ class Admin extends Component {
                 <Top/>
               </div>
               <Search/>
+              <Notice/>
+              <Community/>
+              <Employment/>
+              <Campus/>
+              <Life/>
             </div>
           );
     }

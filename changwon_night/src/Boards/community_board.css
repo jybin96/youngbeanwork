@@ -1,0 +1,16 @@
+.com_boardbox{
+    border : 1px solid;
+    width: 600px;
+    height: 800px;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 500px;
+    background-color: khaki;
+}
+
+.com_boardbox td{
+    border : 1px solid;
+    border-left: none;
+    border-right: none;
+    padding: 0px 20px;
+}

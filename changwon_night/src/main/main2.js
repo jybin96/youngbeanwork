@@ -26,7 +26,7 @@ class Adminbox extends Component{
             
             <div className="logbox">
                 <div className="idpwbox">
-                    <p>{window.localStorage.getItem('nickname')} 을 환영합니다!</p>
+                    <p><font color="red">{window.localStorage.getItem('nickname')}</font>님 환영합니다!</p>
                     <ul id="sign">
                         <li>
                            <Link to='/admin'>개인정보</Link>

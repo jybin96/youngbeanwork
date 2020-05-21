@@ -8,6 +8,7 @@ import Community from './Board/community';
 import Employment from './Board/employment';
 import Campus from './Board/campus';
 import Life from './Board/life';
+import Community_board from './Boards/community_board';
 import './app.css';
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route exact path ="/employment" component={Employment}/>
       <Route exact path ="/campus" component={Campus}/>
       <Route exact path ="/life" component={Life}/>
+      <Route exact path="/community_board" component={Community_board}/>
     </div>
   );
 }

@@ -15,7 +15,7 @@ class Community extends Component {
           </h2>
         </div>
           <ol>
-            <Link to = "/community">
+            <Link to = "/community_board">
             <li>내용</li>
             <li>내용</li>
             <li>내용</li>

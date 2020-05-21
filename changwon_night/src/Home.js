@@ -32,7 +32,7 @@ class Home extends Component {
   
     render(){
         return (
-          <>
+          
             <div className="App">
               <div className="middle">
                 <Login history={this.props.history}/>
@@ -44,16 +44,9 @@ class Home extends Component {
               <Employment/>
               <Campus/>
               <Life/>
-            </div>
-            <Editor
-              hideModeSwitch='true'
-              initialEditType='wysiwyg'
-              plugins={[colorSyntax]}
-              ref={this.editorRef}
-            />
-            <button onClick={this.handleClickButton}>Click!</button>
-          </>
-          );
+
+            </div>          
+        );
     }
   
 }
