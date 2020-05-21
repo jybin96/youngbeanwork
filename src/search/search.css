@@ -1,0 +1,35 @@
+.searchbox{
+    border : 1px;
+    width: 287px;
+    height: 45px;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+.search {
+    width: 50px;
+    float: left;
+    
+}
+.search p{
+    margin-left: 8px;
+    margin-top: 8px;
+    display: block;
+    color: white;
+    background-color: #f8585b;
+    text-align: center;
+    height: 35px;
+    width: 50px;
+    padding-top: 9px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.box{
+    width: 220px;
+    float: left;
+}
+.box input{
+    margin-left: 10px;
+    width: 220px;
+    height: 35px;
+    margin-top: 10px;
+}

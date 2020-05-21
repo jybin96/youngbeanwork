@@ -1,0 +1,124 @@
+.title{
+    border: 1px solid black;
+    width: 400px;
+    height: 60px;
+    text-align: center;
+}
+
+.form{
+    border: 1px solid black;
+    width: 400px;
+    height: 440px;
+    position: absolute;
+    left: 550px;
+    right: 50px;
+    top: 120px;
+   
+}
+.idinput{
+    border: 1px solid green;
+    width: 400px;
+    height: 30px;
+    margin-top: 20px;
+    
+}
+.idinput input{
+    margin-left: 10px;
+    height: 20px;
+    width: 160px;
+}
+.idinput label{
+    font-size: 15px;
+}
+.idinput button{
+    margin-left: 40px;
+}
+.nickinput{
+    border: 1px solid green;
+    width: 400px;
+    height: 30px;
+    margin-top: 0px;
+    
+}
+.nickinput input{
+    margin-left: 10px;
+    height: 20px;
+    width: 160px;
+}
+.nickinput label{
+    font-size: 15px;
+}
+.nickinput button{
+    margin-left: 40px;
+}
+.pwinput{
+    border: 1px solid blue;
+    margin-top: 0px;
+    width: 400px;
+    height: 30px;
+}
+.pwinput input{
+    margin-left: 10px;
+    height: 20px;
+    width: 160px;
+}
+.pw2input{
+    border: 1px solid yellow;
+    width: 400px;
+    height: 30px;
+}
+.pw2input input{
+    margin-left: 10px;
+    height: 20px;
+    width: 160px;
+}
+.pw2input button{
+    margin-left: 300px;
+    margin-top: 5px;
+}
+.emailinput{
+    margin-top: 65px;
+    border: 1px solid purple;
+    width: 400px;
+    height: 100px;
+}
+.emailinput input{
+    width: 98px;
+    margin-left: 6px;
+}
+.emailinput button{
+    margin-left: 140px;
+    margin-top: 3px;
+}
+.emailsearch{
+    margin-top: 20px;
+}
+.emailsearch button{
+    margin-left: 20px;
+}
+.changwonackr{
+    margin-left: 13px;
+    width: 125px;
+    height: 20px;
+    position: absolute;
+    top: 278px;
+    right: 110px;
+
+}
+.changwonackr p{
+    font-size: 14px;
+    margin-top: 10px;
+}
+#submit{
+    margin-top: 25px;
+    margin-left: 310px;
+}
+#pwdiv{
+    border: 1px solid black;
+    width: 400px;
+    height: 30px;
+    margin-top: 3px;
+}
+#pwdiv p{
+    margin-top: 3px;
+}
